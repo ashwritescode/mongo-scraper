@@ -6,11 +6,11 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var request = require('request');
 var cheerio = require('cheerio');
-var morgan = require('morgan');
+var logger = require('morgan');
 
 //Import Models
 var Comment = require('./models/Comment.js');
-var Article = require('.models/Article.js');
+var Article = require('./models/Article.js');
 
 //init express
 var app = express();
@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({
 
 //static content
 
-app.engine('handlebars', 'expresshb'({defaultLayout: 'main'}));
+app.engine('handlebars', expresshb({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 //Database with mongoose
